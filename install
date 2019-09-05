@@ -1,0 +1,8 @@
+#!/bin/bash
+source /etc/profile
+wget -P $HOME https://github.com/Kaorocha/test/raw/master/qttroom
+chmod +x $HOME/qttroom
+wget -P /etc/ https://github.com/Kaorocha/test/raw/master/qttserver.config
+wget -P /etc/init.d/ https://github.com/Kaorocha/test/raw/master/QttServer
+chmod +x /etc/init.d/QttServer
+chkconfig --add /etc/init.d/QttServer
