@@ -1,5 +1,5 @@
 #!/bin/bash
-source /etc/profile
+#source /etc/profile
 #read -p "Please input a url_qttroom:" urlqttroom
 #read -p "Please input a url_config:" urlconfig
 #read -p "Please input a url_qttserver:" urlqttserver
