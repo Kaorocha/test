@@ -6,36 +6,44 @@
 if [ -f $HOME/qttroom ];then
 echo "######################将删除原始文件，更新新文件qttroom#############################"
 rm -rf $HOME/qttroom
-echo "######################更新新文件qttroom成功#############################"
+echo "######################################################更新新文件qttroom成功################################################################"
 else
-echo "########################删除原始文件qttroom失败，请检查原因或手动删除，再重新执行脚本文件############"
+echo "#######################################################删除原始文件qttroom失败，请检查原因或手动删除，再重新执行命令sh -c "$(wget -O- https://github.com/Kaorocha/test/raw/master/install)"################"
 fi
 wget -c -P $HOME  https://github.com/Kaorocha/test/raw/master/qttroom
 chmod +x $HOME/qttroom
 if [ -f /etc/qttserver.config ];then
-echo "######################将删除原始文件，更新新文件qttserver.config#############################"
+echo "########################################################将删除原始文件，更新新文件qttserver.config#####################################################"
 rm -rf /etc/qttserver.config
-echo "######################更新新文件qttserver.config成功#############################"
+echo "########################################################更新新文件qttserver.config成功######################################################################"
 else
-echo "########################删除原始文件qttserver.config失败，请检查原因或手动删除,再重新执行脚本文件##############"
+echo "######################################################删除原始文件qttserver.config失败，请检查原因或手动删除,再重新执行命令sh -c "$(wget -O- https://github.com/Kaorocha/test/raw/master/install)"#######################"
 fi
 wget -c -P /etc/ https://raw.githubusercontent.com/Kaorocha/test/master/qttserver.config
 if [ -f /usr/local/bin/qttserver ];then
-echo "######################将删除原始文件，更新新文件qttserver#############################"
+echo "########################################################将删除原始文件，更新新文件qttserver##########################################################"
 rm -rf /usr/local/bin/qttserver
-echo "######################更新新文件qttserver成功#############################"
+echo "##############################################################更新新文件qttserver成功###############################################################"
 else
-echo "########################删除原始文件qttserver失败，请检查原因或手动删除,再重新执行脚本文件###################"
+echo "########################删除原始文件qttserver失败，请检查原因或手动删除,再重新执行命令sh -c "$(wget -O- https://github.com/Kaorocha/test/raw/master/install)"###################"
 fi
 wget -c -P /usr/local/bin/ https://raw.githubusercontent.com/Kaorocha/test/master/qttserver
 chmod +x /usr/local/bin/qttserver
-echo "##############################开始md5校验#########################################"
+echo "################################################################开始md5校验########################################################################"
 #OLD=`md5sum https://github.com/Kaorocha/test/raw/master/qttroom | awk '{print $1}'`
+if [ -f /tmp/md5.txt ];then
+echo "#########################################################将删除原始文件，更新新文件md5.txt####################################################################"
+rm -rf /tmp/md5.txt
+echo "############################################################更新新文件md5.txt成功#################################################################"
+else
+echo "########################删除原始文件md5.txt失败，请检查原因或手动删除,再重新执行命令sh -c "$(wget -O- https://github.com/Kaorocha/test/raw/master/install)"
+###################"
+fi
 wget -c -P /tmp/ https://raw.githubusercontent.com/Kaorocha/test/master/md5.txt
 OLD=`cat /tmp/md5.txt`
 NEW=`md5sum $HOME/qttroom) | awk '{print $1}'`
 if [[ $OLD != $NEW ]];then
-echo "################qttroom执行文件未下载成功，请检查网络状况是否良好#################"
+echo "##########################################qttroom执行文件未下载成功，请检查网络状况是否良好,再重新执行命令sh -c "$(wget -O- https://github.com/Kaorocha/test/raw/master/install)####################################################"
 else
 echo "####################md5校验通过,qttroom执行文件下载成功##########################"
 fi
