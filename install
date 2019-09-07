@@ -8,7 +8,7 @@ echo "将删除原始文件qttroom..............................................
 rm -rf $HOME/qttroom
 echo "删除原始文件文件qttroom成功............................................................................................................"
 else
-echo "删除原始文件qttroom失败，请检查原因或手动删除，再重新执行命令sh -c "$(wget -O- https://github.com/Kaorocha/test/raw/master/install)"..............................."
+echo '删除原始文件qttroom失败，请检查原因或手动删除，再重新执行命令sh -c "$(wget -O- https://github.com/Kaorocha/test/raw/master/install)"..............................'
 fi
 echo "开始下载qttroom......................................................................................................................"
 wget -c -P $HOME  https://github.com/Kaorocha/test/raw/master/qttroom
@@ -19,7 +19,7 @@ echo "将删除原始文件qttserver.config.....................................
 rm -rf /etc/qttserver.config
 echo "删除原始文件qttserver.config成功......................................................................................................"
 else
-echo "删除原始文件qttserver.config失败，请检查原因或手动删除,再重新执行命令sh -c "$(wget -O- https://github.com/Kaorocha/test/raw/master/install)...."
+echo '删除原始文件qttserver.config失败，请检查原因或手动删除,再重新执行命令sh -c "$(wget -O- https://github.com/Kaorocha/test/raw/master/install)"....'
 fi
 echo "开始下载qttserver.config............................................................................................................"
 wget -c -P /etc/ https://raw.githubusercontent.com/Kaorocha/test/master/qttserver.config
@@ -29,7 +29,7 @@ echo "将删除原始文件.....................................................
 rm -rf /usr/local/bin/qttserver
 echo "删除原始文件qttserver成功............................................................................................................"
 else
-echo "删除原始文件qttserver失败，请检查原因或手动删除,再重新执行命令sh -c "$(wget -O- https://github.com/Kaorocha/test/raw/master/install)"....................................................."
+echo '删除原始文件qttserver失败，请检查原因或手动删除,再重新执行命令sh -c "$(wget -O- https://github.com/Kaorocha/test/raw/master/install)"...............'
 fi
 echo "开始下载qttserver..................................................................................................................."
 wget -c -P /usr/local/bin/ https://raw.githubusercontent.com/Kaorocha/test/master/qttserver
@@ -42,7 +42,7 @@ echo "将删除原始文件md5.txt..............................................
 rm -rf /tmp/md5.txt
 echo "删除原始文件md5.txt成功.............................................................................................................."
 else
-echo "删除原始文件md5.txt失败，请检查原因或手动删除,再重新执行命令sh -c "$(wget -O- https://github.com/Kaorocha/test/raw/master/install)......."
+echo '删除原始文件md5.txt失败，请检查原因或手动删除,再重新执行命令sh -c "$(wget -O- https://github.com/Kaorocha/test/raw/master/install)".......'
 fi
 echo "开始下载md5.txt......................................................................................................................"
 wget -c -P /tmp/ https://raw.githubusercontent.com/Kaorocha/test/master/md5.txt
@@ -50,7 +50,7 @@ echo "下载qttserver完毕.....................................................
 OLD=`cat /tmp/md5.txt`
 NEW=`md5sum $HOME/qttroom) | awk '{print $1}'`
 if [[ $OLD != $NEW ]];then
-echo "qttroom执行文件未下载成功，请检查网络状况是否良好,再重新执行命令sh -c "$(wget -O- https://github.com/Kaorocha/test/raw/master/install)........."
+echo 'qttroom执行文件未下载成功，请检查网络状况是否良好,再重新执行命令sh -c "$(wget -O- https://github.com/Kaorocha/test/raw/master/install)".........'
 else
 echo "md5校验通过,qttroom执行文件下载无遗漏..................................................................................................."
 fi
