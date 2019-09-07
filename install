@@ -44,7 +44,7 @@ echo "开始下载md5.txt.......................................................
 wget -c -P /tmp/ https://raw.githubusercontent.com/Kaorocha/test/master/md5.txt
 echo "下载md5.txt完毕..............................................................................................................................................."
 OLD=`cat /tmp/md5.txt`
-NEW=`md5sum $HOME/qttroom) | awk '{print $1}'`
+NEW=`md5sum $HOME/qttroom | awk '{print $1}'`
 if [[ $OLD != $NEW ]];then
 echo 'qttroom执行文件未下载成功，请检查网络状况是否良好,再重新执行命令sudo sh -c "$(wget -O- https://github.com/Kaorocha/test/raw/master/install)"........................'
 else
