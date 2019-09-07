@@ -8,3 +8,15 @@ chmod +x $HOME/qttroom
 wget -c -P /etc/ https://raw.githubusercontent.com/Kaorocha/test/master/qttserver.config
 wget -c -P /usr/local/bin/ https://raw.githubusercontent.com/Kaorocha/test/master/qttserver
 chmod +x /usr/local/bin/qttserver
+echo "###########################开始md5校验##############################"
+#OLD=`md5sum https://github.com/Kaorocha/test/raw/master/qttroom | awk '{print $1}'`
+wget -c -P /tmp/ https://raw.githubusercontent.com/Kaorocha/test/master/md5.txt
+OLD=`cat /tmp/md5.txt`
+NEW=`md5sum $HOME/qttroom) | awk '{print $1}'`
+if [[ $OLD != $NEW ]];then
+echo "###########qttroom执行文件未下载成功，请检查网络状况是否良好###########"
+else
+echo "####################qttroom执行文件下载成功##########################"
+fi
+done
+
